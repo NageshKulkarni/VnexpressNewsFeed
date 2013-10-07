@@ -14,6 +14,7 @@
     NewsItem *item;
     NSMutableArray *items;
     NSMutableString *currentItemValue;
+    NSString *lastElementName;
 }
 @end
 
@@ -95,13 +96,14 @@
 static NSString *TITLE = @"title";
 static NSString *ITEM = @"item";
 static NSString *CHANNEL = @"channel";
-static NSString *DESC = @"description";
+//static NSString *DESC = @"description";
 static NSString *UPDATED = @"updated";
 
 -(void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
     if([elementName isEqualToString:ITEM])
     {
+        lastElementName = elementName;
         item = [[NewsItem alloc] init];
     }
 }
@@ -109,13 +111,19 @@ static NSString *UPDATED = @"updated";
 
 -(void) parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
-    if(!currentItemValue)
+    if (!currentItemValue)
     {
         currentItemValue = [[NSMutableString alloc] initWithString:string];
-    }else
+    } else
     {
         [currentItemValue appendString:string];
     }
+}
+
+-(void) parser:(NSXMLParser *)parser foundCDATA:(NSData *)CDATABlock
+{
+    NSString *cData = [[NSString alloc] initWithData:CDATABlock encoding:NSUTF8StringEncoding];
+    [item setValue:cData forKey:@"desc"];
 }
 
 -(void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
@@ -135,19 +143,17 @@ static NSString *UPDATED = @"updated";
     }
     else
     {
-        if([elementName isEqualToString:DESC])
+        if([elementName isEqualToString:TITLE])
         {
-            [item setValue:currentItemValue forKey:@"desc"];
-        }
-        else if([elementName isEqualToString:TITLE])
-        {
-            [item setValue:currentItemValue forKey:TITLE];
+            [item setValue:[currentItemValue stringByReplacingOccurrencesOfString:@"\n" withString:@""] forKey:TITLE];
         }
         else if([elementName isEqualToString:UPDATED])
         {
             [item setValue:currentItemValue forKey:UPDATED];
         }
         
+        currentItemValue = nil;
+
     }
 }
 

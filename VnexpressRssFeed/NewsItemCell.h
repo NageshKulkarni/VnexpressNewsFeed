@@ -12,8 +12,8 @@
 @interface NewsItemCell : UITableViewCell
 {
     IBOutlet UILabel *title;
-    IBOutlet UILabel *description;
     IBOutlet UIImageView *thumbnail;
+    IBOutlet UILabel *description;
 }
 -(void)setRowData: (NewsItem *)item;
 
