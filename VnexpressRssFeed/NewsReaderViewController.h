@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewsReaderViewController : UIViewController
+@interface NewsReaderViewController : UIViewController <UIWebViewDelegate>
+{
+    IBOutlet UIWebView *webView;
+    BOOL isLoading;
+    UIActivityIndicatorView *indicatorView;
+}
+
+@property NSString *link;
 
 @end

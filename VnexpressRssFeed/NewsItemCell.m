@@ -29,7 +29,7 @@
 
 -(void)setRowData:(NewsItem *)item
 {
-    title.text = [item.title stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    title.text = item.title;
     description.text = item.desc;
 }
 @end

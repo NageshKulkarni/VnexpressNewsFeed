@@ -8,6 +8,7 @@
 
 #import "MMViewController.h"
 #import "CommonData.h"
+#import "NewsReaderViewController.h"
 
 @interface MMViewController ()
 {
@@ -22,7 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"VnExpress News Feed";
+    self.title = @"News Feed";
     [self initializeComponents];
     [self getFeedData];
 }
@@ -43,6 +44,10 @@
     return 1;
 }
 
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//}
+
 -(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 80;
@@ -61,6 +66,16 @@
     NewsItem *item1 = (NewsItem*)[tableData objectAtIndex:indexPath.row];
     [cell setRowData:item1];
     return cell;
+}
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"select row at %i - %i", indexPath.row, indexPath.section);
+    NewsReaderViewController *newsReaderViewController = [[NewsReaderViewController alloc] initWithNibName:@"NewsReaderViewController" bundle:nil];
+    NewsItem *newsItem = [tableData objectAtIndex:indexPath.row];
+    newsReaderViewController.navigationItem.title = newsItem.title;
+    newsReaderViewController.link = newsItem.link;
+    [self.navigationController pushViewController:newsReaderViewController animated:YES];
 }
 
 #pragma mark - NSURLConnection delegate method
@@ -98,6 +113,7 @@ static NSString *ITEM = @"item";
 static NSString *CHANNEL = @"channel";
 //static NSString *DESC = @"description";
 static NSString *UPDATED = @"updated";
+static NSString *LINK = @"link";
 
 -(void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
@@ -143,13 +159,18 @@ static NSString *UPDATED = @"updated";
     }
     else
     {
+        NSString *normalizedText = [[currentItemValue stringByReplacingOccurrencesOfString:@"\n" withString:@""] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         if([elementName isEqualToString:TITLE])
         {
-            [item setValue:[currentItemValue stringByReplacingOccurrencesOfString:@"\n" withString:@""] forKey:TITLE];
+            [item setValue:normalizedText forKey:TITLE];
         }
         else if([elementName isEqualToString:UPDATED])
         {
-            [item setValue:currentItemValue forKey:UPDATED];
+            [item setValue:normalizedText forKey:UPDATED];
+        }
+        else if([elementName isEqualToString:LINK])
+        {
+            [item setValue:normalizedText forKey:LINK];
         }
         
         currentItemValue = nil;
@@ -179,6 +200,7 @@ static NSString *UPDATED = @"updated";
     [indicatorView startAnimating];
     [connecion start];
 }
+
 
 @end
 
