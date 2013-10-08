@@ -20,4 +20,6 @@
 
 @property NSString *guid;
 
+@property NSString *thumbUrl;
+
 @end

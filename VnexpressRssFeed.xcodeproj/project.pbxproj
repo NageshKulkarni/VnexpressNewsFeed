@@ -26,6 +26,13 @@
 		C2157A4F17E808BF00B5E0E2 /* RssParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2157A4E17E808BF00B5E0E2 /* RssParserTest.m */; };
 		C2157A5317E80FD700B5E0E2 /* NewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C2157A5217E80FD700B5E0E2 /* NewsItem.m */; };
 		C23E22B117FBF9E500DE7E39 /* CommonData.m in Sources */ = {isa = PBXBuildFile; fileRef = C23E22B017FBF9E500DE7E39 /* CommonData.m */; };
+		C246204A1803A575000BE0A9 /* NewsReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C24620481803A575000BE0A9 /* NewsReaderViewController.m */; };
+		C246204B1803A575000BE0A9 /* NewsReaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C24620491803A575000BE0A9 /* NewsReaderViewController.xib */; };
+		C246204E1803BCD7000BE0A9 /* CDATAParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C246204D1803BCD7000BE0A9 /* CDATAParser.m */; };
+		C24620511803BD77000BE0A9 /* CDATAParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C24620501803BD77000BE0A9 /* CDATAParserTest.m */; };
+		C24620551803EAD4000BE0A9 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C24620541803EAD4000BE0A9 /* SDWebImage.framework */; };
+		C24620571803EC1D000BE0A9 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C24620561803EC1D000BE0A9 /* ImageIO.framework */; };
+		C246205918040194000BE0A9 /* refresh-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C246205818040194000BE0A9 /* refresh-icon.png */; };
 		C2918BEF1802B9270079008D /* icon-news.png in Resources */ = {isa = PBXBuildFile; fileRef = C2918BEE1802B9270079008D /* icon-news.png */; };
 		C2A2145A17E83D5F0084318E /* NewsItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A2145917E83D5F0084318E /* NewsItemCell.xib */; };
 		C2A2145D17E83E030084318E /* NewsItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A2145C17E83E030084318E /* NewsItemCell.m */; };
@@ -70,6 +77,16 @@
 		C2157A5217E80FD700B5E0E2 /* NewsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsItem.m; sourceTree = "<group>"; };
 		C23E22AF17FBF9E500DE7E39 /* CommonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonData.h; sourceTree = "<group>"; };
 		C23E22B017FBF9E500DE7E39 /* CommonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonData.m; sourceTree = "<group>"; };
+		C24620471803A575000BE0A9 /* NewsReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsReaderViewController.h; sourceTree = "<group>"; };
+		C24620481803A575000BE0A9 /* NewsReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsReaderViewController.m; sourceTree = "<group>"; };
+		C24620491803A575000BE0A9 /* NewsReaderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsReaderViewController.xib; sourceTree = "<group>"; };
+		C246204C1803BCD7000BE0A9 /* CDATAParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDATAParser.h; sourceTree = "<group>"; };
+		C246204D1803BCD7000BE0A9 /* CDATAParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDATAParser.m; sourceTree = "<group>"; };
+		C246204F1803BD77000BE0A9 /* CDATAParserTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDATAParserTest.h; sourceTree = "<group>"; };
+		C24620501803BD77000BE0A9 /* CDATAParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDATAParserTest.m; sourceTree = "<group>"; };
+		C24620541803EAD4000BE0A9 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = VnexpressRssFeed/SDWebImage.framework; sourceTree = "<group>"; };
+		C24620561803EC1D000BE0A9 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		C246205818040194000BE0A9 /* refresh-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "refresh-icon.png"; path = "../../../../Desktop/refresh-icon.png"; sourceTree = "<group>"; };
 		C2918BEE1802B9270079008D /* icon-news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-news.png"; path = "../../../../Desktop/icon-news.png"; sourceTree = "<group>"; };
 		C2A2145917E83D5F0084318E /* NewsItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsItemCell.xib; sourceTree = "<group>"; };
 		C2A2145B17E83E030084318E /* NewsItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsItemCell.h; sourceTree = "<group>"; };
@@ -81,9 +98,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C24620571803EC1D000BE0A9 /* ImageIO.framework in Frameworks */,
 				C2157A0F17E8068900B5E0E2 /* UIKit.framework in Frameworks */,
 				C2157A1117E8068900B5E0E2 /* Foundation.framework in Frameworks */,
 				C2157A1317E8068900B5E0E2 /* CoreGraphics.framework in Frameworks */,
+				C24620551803EAD4000BE0A9 /* SDWebImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +141,8 @@
 		C2157A0D17E8068900B5E0E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C24620561803EC1D000BE0A9 /* ImageIO.framework */,
+				C24620541803EAD4000BE0A9 /* SDWebImage.framework */,
 				C2157A0E17E8068900B5E0E2 /* UIKit.framework */,
 				C2157A1017E8068900B5E0E2 /* Foundation.framework */,
 				C2157A1217E8068900B5E0E2 /* CoreGraphics.framework */,
@@ -137,6 +158,9 @@
 				C2157A4917E807FC00B5E0E2 /* RssParser */,
 				C23E22AF17FBF9E500DE7E39 /* CommonData.h */,
 				C23E22B017FBF9E500DE7E39 /* CommonData.m */,
+				C24620471803A575000BE0A9 /* NewsReaderViewController.h */,
+				C24620481803A575000BE0A9 /* NewsReaderViewController.m */,
+				C24620491803A575000BE0A9 /* NewsReaderViewController.xib */,
 				C2157A1D17E8068900B5E0E2 /* MMAppDelegate.h */,
 				C2157A1E17E8068900B5E0E2 /* MMAppDelegate.m */,
 				C2157A2617E8068900B5E0E2 /* MMViewController.h */,
@@ -153,6 +177,7 @@
 		C2157A1517E8068900B5E0E2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C246205818040194000BE0A9 /* refresh-icon.png */,
 				C2918BEE1802B9270079008D /* icon-news.png */,
 				C2157A1617E8068900B5E0E2 /* VnexpressRssFeed-Info.plist */,
 				C2157A1717E8068900B5E0E2 /* InfoPlist.strings */,
@@ -168,6 +193,8 @@
 		C2157A3817E8068900B5E0E2 /* VnexpressRssFeedTests */ = {
 			isa = PBXGroup;
 			children = (
+				C246204F1803BD77000BE0A9 /* CDATAParserTest.h */,
+				C24620501803BD77000BE0A9 /* CDATAParserTest.m */,
 				C2157A4D17E808BF00B5E0E2 /* RssParserTest.h */,
 				C2157A4E17E808BF00B5E0E2 /* RssParserTest.m */,
 				C2157A3E17E8068900B5E0E2 /* VnexpressRssFeedTests.h */,
@@ -189,6 +216,8 @@
 		C2157A4917E807FC00B5E0E2 /* RssParser */ = {
 			isa = PBXGroup;
 			children = (
+				C246204C1803BCD7000BE0A9 /* CDATAParser.h */,
+				C246204D1803BCD7000BE0A9 /* CDATAParser.m */,
 			);
 			name = RssParser;
 			sourceTree = "<group>";
@@ -281,6 +310,7 @@
 				C2157A2B17E8068900B5E0E2 /* MMViewController.xib in Resources */,
 				C2A2145A17E83D5F0084318E /* NewsItemCell.xib in Resources */,
 				C2918BEF1802B9270079008D /* icon-news.png in Resources */,
+				C246204B1803A575000BE0A9 /* NewsReaderViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2157A3D17E8068900B5E0E2 /* InfoPlist.strings in Resources */,
+				C246205918040194000BE0A9 /* refresh-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +352,8 @@
 				C2157A5317E80FD700B5E0E2 /* NewsItem.m in Sources */,
 				C2A2145D17E83E030084318E /* NewsItemCell.m in Sources */,
 				C23E22B117FBF9E500DE7E39 /* CommonData.m in Sources */,
+				C246204A1803A575000BE0A9 /* NewsReaderViewController.m in Sources */,
+				C246204E1803BCD7000BE0A9 /* CDATAParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +363,7 @@
 			files = (
 				C2157A4017E8068900B5E0E2 /* VnexpressRssFeedTests.m in Sources */,
 				C2157A4F17E808BF00B5E0E2 /* RssParserTest.m in Sources */,
+				C24620511803BD77000BE0A9 /* CDATAParserTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +432,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -422,6 +457,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -430,6 +466,11 @@
 		C2157A4417E8068900B5E0E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Downloads\"",
+					"\"$(SRCROOT)/VnexpressRssFeed\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VnexpressRssFeed/VnexpressRssFeed-Prefix.pch";
 				INFOPLIST_FILE = "VnexpressRssFeed/VnexpressRssFeed-Info.plist";
@@ -441,6 +482,11 @@
 		C2157A4517E8068900B5E0E2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Downloads\"",
+					"\"$(SRCROOT)/VnexpressRssFeed\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VnexpressRssFeed/VnexpressRssFeed-Prefix.pch";
 				INFOPLIST_FILE = "VnexpressRssFeed/VnexpressRssFeed-Info.plist";
@@ -459,7 +505,9 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VnexpressRssFeed/VnexpressRssFeed-Prefix.pch";
+				HEADER_SEARCH_PATHS = VnexpressRssFeed/SDWebImage.framework/Headers;
 				INFOPLIST_FILE = "VnexpressRssFeedTests/VnexpressRssFeedTests-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -476,7 +524,9 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VnexpressRssFeed/VnexpressRssFeed-Prefix.pch";
+				HEADER_SEARCH_PATHS = VnexpressRssFeed/SDWebImage.framework/Headers;
 				INFOPLIST_FILE = "VnexpressRssFeedTests/VnexpressRssFeedTests-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;

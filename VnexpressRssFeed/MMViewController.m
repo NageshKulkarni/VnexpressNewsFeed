@@ -9,6 +9,8 @@
 #import "MMViewController.h"
 #import "CommonData.h"
 #import "NewsReaderViewController.h"
+#import "CDATAParser.h"
+#import "SDWebImage/UIImageView+WebCache.h"
 
 @interface MMViewController ()
 {
@@ -44,10 +46,6 @@
     return 1;
 }
 
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-//{
-//}
-
 -(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 80;
@@ -70,7 +68,6 @@
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"select row at %i - %i", indexPath.row, indexPath.section);
     NewsReaderViewController *newsReaderViewController = [[NewsReaderViewController alloc] initWithNibName:@"NewsReaderViewController" bundle:nil];
     NewsItem *newsItem = [tableData objectAtIndex:indexPath.row];
     newsReaderViewController.navigationItem.title = newsItem.title;
@@ -97,6 +94,7 @@
     [indicatorView stopAnimating];
     NSLog(@"%@", [NSString stringWithFormat:@"size of downloaded file is %d bytes", responseData.length]);
     NSXMLParser *parser = [[NSXMLParser alloc] initWithData:responseData];
+     responseData = [NSMutableData data];
     [parser setDelegate:self];
     [parser parse];
 }
@@ -139,7 +137,9 @@ static NSString *LINK = @"link";
 -(void) parser:(NSXMLParser *)parser foundCDATA:(NSData *)CDATABlock
 {
     NSString *cData = [[NSString alloc] initWithData:CDATABlock encoding:NSUTF8StringEncoding];
-    [item setValue:cData forKey:@"desc"];
+    CDATAParser *cDataParser = [[CDATAParser alloc] initWithString:cData];
+    [item setValue:[cDataParser getHeadline] forKey:@"desc"];
+    [item setValue:[cDataParser getThumbnailUrl] forKey:@"thumbUrl"];
 }
 
 -(void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
@@ -189,7 +189,9 @@ static NSString *LINK = @"link";
     responseData = [NSMutableData data];
     [self.view addSubview:indicatorView];
     items = [[NSMutableArray alloc] init];
-                                            
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Refresh"
+                                                                              style:UIBarButtonItemStylePlain target:self action:@selector(refreshButtonAction)];;
 }
 
 - (void)getFeedData
@@ -201,6 +203,12 @@ static NSString *LINK = @"link";
     [connecion start];
 }
 
+
+-(void) refreshButtonAction
+{
+    [items removeAllObjects];
+    [self getFeedData];
+}
 
 @end
 

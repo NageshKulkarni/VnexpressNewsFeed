@@ -7,6 +7,8 @@
 //
 
 #import "NewsItemCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+
 
 @implementation NewsItemCell
 
@@ -31,5 +33,7 @@
 {
     title.text = item.title;
     description.text = item.desc;
+    [thumbnail setImageWithURL:[NSURL URLWithString:item.thumbUrl]
+                   placeholderImage:[UIImage imageNamed:@"icon-news.png"]];
 }
 @end

@@ -16,5 +16,7 @@
     NSMutableData *responseData;
     UIActivityIndicatorView *indicatorView;
     IBOutlet UITableView *tableview;
+    
+    UIButton *rightButton;
 }
 @end
